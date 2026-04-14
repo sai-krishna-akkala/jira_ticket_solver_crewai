@@ -345,7 +345,7 @@ MIT License — free to use, modify, and distribute.
 
 <div align="center">
 
-**Built with ❤️ using [CrewAI](https://www.crewai.com/) + [Ollama](https://ollama.com/) + [llama3.1](https://llama.meta.com/)**
+**Built with using [CrewAI](https://www.crewai.com/) + [Ollama](https://ollama.com/) + [llama3.1](https://llama.meta.com/)**
 
 <br>
 
