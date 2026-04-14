@@ -208,7 +208,7 @@ jira_solver_crew/
 
 | ID | Priority | Status | Bug | File |
 |----|:--------:|:------:|-----|------|
-| `JIRA-101` | 🔴 P0 | ✅ done | Case-sensitive email login | `auth/login.py` |
+| `JIRA-101` | 🔴 P0 | 🔄 open | Case-sensitive email login | `auth/login.py` |
 | `JIRA-102` | 🟠 P1 | 🔄 open | No phone number validation | `forms/signup.py` |
 | `JIRA-100` | 🟡 P2 | ✅ done | *(previously resolved by human)* | `forms/signup.py` |
 
