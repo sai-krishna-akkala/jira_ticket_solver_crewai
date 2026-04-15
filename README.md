@@ -294,7 +294,7 @@ Pipeline: Intake → Analyze → Navigate → Fix → PR → Close
 
 ## ⚠️ Important Notes
 
-> **Model Compatibility** — Only `llama3.2` and `llama3.2` support tool/function calling in Ollama. `llama3` and `codellama` do **NOT** work with CrewAI tools.
+> **Model Compatibility** — `llama3.2` support tool/function calling in Ollama. `llama3` and `codellama` do **NOT** work with CrewAI tools.
 
 > **One Ticket Per Loop** — Each iteration resolves the single highest-priority open ticket. The main loop continues until zero remain.
 
