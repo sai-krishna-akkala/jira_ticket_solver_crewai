@@ -5,8 +5,8 @@
 ### **Autonomous AI Bug-Fix Pipeline powered by CrewAI + Ollama**
 
 [![CrewAI](https://img.shields.io/badge/CrewAI-1.12-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==&labelColor=1a1a2e)](https://www.crewai.com/)
-[![Ollama](https://img.shields.io/badge/Ollama-llama3.1-green?style=for-the-badge&labelColor=0d1117)](https://ollama.com/)
-[![Python](https://img.shields.io/badge/Python-3.11+-yellow?style=for-the-badge&logo=python&labelColor=1a1a2e)](https://python.org)
+[![Ollama](https://img.shields.io/badge/Ollama-llama3.2-green?style=for-the-badge&labelColor=0d1117)](https://ollama.com/)
+[![Python](https://img.shields.io/badge/Python-3.21+-yellow?style=for-the-badge&logo=python&labelColor=1a1a2e)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge&labelColor=1a1a2e)]()
 
 <br>
@@ -59,7 +59,7 @@ graph TB
     subgraph LLM["🧠 LLM ENGINE"]
         style LLM fill:#1b1b2f,stroke:#e23e57,color:#fff,stroke-width:2px
         OLLAMA["Ollama Server<br/>localhost:11434"]
-        LLAMA["🦙 llama3.1<br/>70B Versatile"]
+        LLAMA["🦙 llama3.2<br/>70B Versatile"]
     end
 
     subgraph TOOLS["🔧 CUSTOM TOOLS"]
@@ -165,7 +165,7 @@ jira_solver_crew/
 ├── 🤖 crew.py                    # 6 agents + 6 tasks + sequential crew
 │
 ├── ⚙️ config/
-│   └── llm_config.py             # Ollama llama3.1 configuration
+│   └── llm_config.py             # Ollama llama3.2 configuration
 │
 ├── 🔧 tools/
 │   ├── ticket_reader.py          # Read + prioritize tickets.json
@@ -195,12 +195,12 @@ jira_solver_crew/
 
 | # | Agent | Role | LLM | Tools |
 |:-:|-------|------|:---:|-------|
-| 🎫 | **Ticket Intake Specialist** | Reads tickets.json, sorts by priority, returns top open ticket | llama3.1 | `TicketReaderTool` |
-| 🔍 | **Technical Ticket Analyst** | Converts ticket description into precise technical specification | llama3.1 | — |
-| 📂 | **Codebase Navigator** | Reads source files, finds exact buggy function and line numbers | llama3.1 | `CodeReaderTool` |
-| 🛠️ | **Autonomous Code Fixer** | Writes minimal correct fix and saves to output folder | llama3.1 (temp=0.1) | `CodeReaderTool`, `CodeWriterTool` |
-| 🌿 | **PR Creator** | Creates git branch, commits fix, writes PR summary markdown | llama3.1 | `GitTool` |
-| ✅ | **Ticket Closer** | Marks ticket as done, updates resolution log | llama3.1 | `TicketUpdaterTool` |
+| 🎫 | **Ticket Intake Specialist** | Reads tickets.json, sorts by priority, returns top open ticket | llama3.2 | `TicketReaderTool` |
+| 🔍 | **Technical Ticket Analyst** | Converts ticket description into precise technical specification | llama3.2 | — |
+| 📂 | **Codebase Navigator** | Reads source files, finds exact buggy function and line numbers | llama3.2 | `CodeReaderTool` |
+| 🛠️ | **Autonomous Code Fixer** | Writes minimal correct fix and saves to output folder | llama3.2 (temp=0.1) | `CodeReaderTool`, `CodeWriterTool` |
+| 🌿 | **PR Creator** | Creates git branch, commits fix, writes PR summary markdown | llama3.2 | `GitTool` |
+| ✅ | **Ticket Closer** | Marks ticket as done, updates resolution log | llama3.2 | `TicketUpdaterTool` |
 
 ---
 
@@ -220,7 +220,7 @@ jira_solver_crew/
 
 | Software | Version | Purpose |
 |----------|---------|---------|
-| **Python** | 3.11+ | Runtime |
+| **Python** | 3.21+ | Runtime |
 | **Ollama** | Latest | Local LLM server |
 | **Git** | Optional | Real branch/commit (has fallback) |
 
@@ -228,7 +228,7 @@ jira_solver_crew/
 
 ```bash
 # Install Ollama from https://ollama.com
-ollama pull llama3.1
+ollama pull llama3.2
 ollama serve              # keep running in a terminal
 ```
 
@@ -294,7 +294,7 @@ Pipeline: Intake → Analyze → Navigate → Fix → PR → Close
 
 ## ⚠️ Important Notes
 
-> **Model Compatibility** — Only `llama3.1` and `llama3.2` support tool/function calling in Ollama. `llama3` and `codellama` do **NOT** work with CrewAI tools.
+> **Model Compatibility** — Only `llama3.2` and `llama3.2` support tool/function calling in Ollama. `llama3` and `codellama` do **NOT** work with CrewAI tools.
 
 > **One Ticket Per Loop** — Each iteration resolves the single highest-priority open ticket. The main loop continues until zero remain.
 
@@ -345,7 +345,7 @@ MIT License — free to use, modify, and distribute.
 
 <div align="center">
 
-**Built with using [CrewAI](https://www.crewai.com/) + [Ollama](https://ollama.com/) + [llama3.1](https://llama.meta.com/)**
+**Built with using [CrewAI](https://www.crewai.com/) + [Ollama](https://ollama.com/) + [llama3.2](https://llama.meta.com/)**
 
 <br>
 
@@ -353,6 +353,6 @@ MIT License — free to use, modify, and distribute.
 &nbsp;
 <img src="https://img.shields.io/badge/Powered_by-Ollama-green?style=for-the-badge" height="30"/>
 &nbsp;
-<img src="https://img.shields.io/badge/Model-llama3.1-red?style=for-the-badge" height="30"/>
+<img src="https://img.shields.io/badge/Model-llama3.2-red?style=for-the-badge" height="30"/>
 
 </div>
