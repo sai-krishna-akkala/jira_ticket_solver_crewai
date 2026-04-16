@@ -1,0 +1,9 @@
+__pycache__/
+venv/
+.env
+DB-design 1.md
+generate_db_assessment_ppt.py
+NCAS_Database_Assessment.pptx
+NCAS_DB_Client_Presentation.md
+technical_paper_crewai.py
+youtube_crewai.py

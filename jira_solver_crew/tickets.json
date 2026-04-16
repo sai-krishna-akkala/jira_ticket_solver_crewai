@@ -1,0 +1,35 @@
+[
+  {
+    "id": "JIRA-100",
+    "type": "bug",
+    "priority": "P2",
+    "status": "done",
+    "title": "Signup form layout broken on mobile",
+    "description": "The signup form does not render correctly on mobile devices. Fields overlap and the submit button is hidden.",
+    "linked_file": "project_codebase/forms/signup.py",
+    "assigned_to": "Human Developer",
+    "resolution_branch": "fix/JIRA-100"
+  },
+  {
+    "id": "JIRA-101",
+    "type": "bug",
+    "priority": "P0",
+    "status": "open",
+    "title": "Login fails for mixed-case emails",
+    "description": "Users who registered with 'alice@example.com' cannot login using 'Alice@Example.com'. The email lookup in auth/login.py is case-sensitive. Expected behavior: email matching should be case-insensitive.",
+    "linked_file": "project_codebase/auth/login.py",
+    "assigned_to": null,
+    "resolution_branch": null
+  },
+  {
+    "id": "JIRA-102",
+    "type": "bug",
+    "priority": "P1",
+    "status": "open",
+    "title": "Signup accepts invalid phone numbers",
+    "description": "The signup form in forms/signup.py accepts any string as a phone number. There is no regex validation. Expected behavior: only accept phone numbers matching the pattern +<country_code><10-15 digits>.",
+    "linked_file": "project_codebase/forms/signup.py",
+    "assigned_to": null,
+    "resolution_branch": null
+  }
+]
